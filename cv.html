@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Cristian Principi · CV</title>
+<style>
+@font-face{font-family:"Newsreader";src:url("assets/fonts/Newsreader.woff2") format("woff2");font-weight:200 800;font-style:normal}
+@font-face{font-family:"Newsreader";src:url("assets/fonts/Newsreader-Italic.woff2") format("woff2");font-weight:200 800;font-style:italic}
+@font-face{font-family:"DM Mono";src:url("assets/fonts/dm_mono_regular.woff2") format("woff2")}
+@page{size:A4;margin:0}
+:root{--ink:#16201a;--muted:#5d6b61;--green:#448361;--line:rgba(22,32,26,.18);--forest:#14231b}
+*{box-sizing:border-box}
+html{background:#d9dfd6}
+body{margin:0;font-family:"Newsreader",Georgia,serif;color:var(--ink);font-size:8.5pt;line-height:1.32;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{width:210mm;height:297mm;margin:0 auto;background:#fff;padding:11mm 15mm 8mm;overflow:hidden;display:none;flex-direction:column}
+html[lang=it] .page[data-l=it],html[lang=en] .page[data-l=en]{display:flex}
+h1,h2,h3,p,ul{margin:0;padding:0}
+ul{list-style:none}
+header{display:flex;justify-content:space-between;align-items:flex-end;gap:8mm;padding-bottom:4mm;border-bottom:1px solid var(--ink)}
+h1{font-weight:300;font-size:24pt;line-height:1;letter-spacing:-.01em}
+h1 em{font-weight:300}
+.role{font-size:7.4pt;letter-spacing:.2em;text-transform:uppercase;color:var(--green);font-weight:600;margin-top:2.4mm}
+.contact{text-align:right;font-family:"DM Mono",monospace;font-size:7.2pt;line-height:1.55;color:var(--muted)}
+section{display:grid;grid-template-columns:31mm 1fr;gap:0 6mm;padding:2.5mm 0;border-bottom:1px solid var(--line)}
+section:last-of-type{border-bottom:0}
+h2{font-size:7pt;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--muted);padding-top:.6mm}
+.profile{font-size:9.3pt;line-height:1.36}
+.item+.item{margin-top:1.8mm}
+.item h3{font-size:9.4pt;font-weight:600;display:flex;justify-content:space-between;gap:4mm;align-items:baseline}
+.item h3 span{font-family:"DM Mono",monospace;font-size:7.2pt;font-weight:400;color:var(--muted);white-space:nowrap}
+.item .sub{font-style:italic;color:var(--muted)}
+.item li{position:relative;padding-left:3.4mm}
+.item li::before{content:"";position:absolute;left:0;top:.62em;width:1.6mm;height:1px;background:var(--green)}
+.skills{display:grid;grid-template-columns:36mm 1fr;gap:.5mm 4mm}
+.skills b{font-weight:600}
+.gdpr{margin-top:auto;padding-top:2mm;font-size:6.6pt;color:var(--muted);font-style:italic}
+@media screen{.page{margin:8mm auto;box-shadow:0 10px 40px -20px rgba(0,0,0,.4)}}
+</style>
+<script>document.documentElement.lang = /[?&]lang=en/.test(location.search) ? 'en' : 'it';</script>
+</head>
+<body>
+
+<!-- ============ ITALIANO ============ -->
+<div class="page" data-l="it">
+  <header>
+    <div>
+      <h1>Cristian <em>Principi</em></h1>
+      <p class="role">Automazione e integrazione AI · Python</p>
+    </div>
+    <p class="contact">Guidonia Montecelio (RM)<br>+39 392 559 5349<br>cristianprincipi01@gmail.com<br>github.com/CristianPrincipi</p>
+  </header>
+
+  <section><h2>Profilo</h2>
+    <p class="profile">Costruisco sistemi che integrano AI, bot, automazione e database: un messaggio diventa un dato ordinato negli strumenti che si usano già. Sviluppatore autodidatta, lavoro AI-first con Claude Code, piani scritti, test e revisione prima di ogni rilascio. Curo soprattutto l'affidabilità: retry, timeout, log e guasti resi visibili. Di giorno lavoro nel supporto IT presso un cliente enterprise.</p>
+  </section>
+
+  <section><h2>Progetti</h2><div>
+    <div class="item"><h3>David · assistente AI su Telegram <span>in esercizio</span></h3>
+      <ul>
+        <li>Servizio Python (asyncio) che automatizza spese e budget, promemoria su Google Calendar, monitoraggio delle partenze dei treni e una knowledge base in Notion; API di Claude per riassumere video, articoli e PDF.</li>
+        <li>L'AI solo dove serve, codice deterministico altrove, per tenere sotto controllo costi e modi di guasto.</li>
+        <li>Affidabilità: retry con backoff su 429 e 5xx, chiamate bloccanti fuori dall'event loop con timeout, log strutturati, errori notificati su Telegram, accesso al solo proprietario.</li>
+        <li>Worker su Railway con deploy automatico subordinato alla CI; un branch per sessione e review prima del merge.</li>
+      </ul></div>
+    <div class="item"><h3>The Office · sistema multi-agente <span>in esercizio · privato</span></h3>
+      <ul>
+        <li>Agenzia di agenti AI su Claude Code headless: dipendenti con ruolo, obiettivo, limiti e spazio di lavoro propri, organizzati in reparti con catena di comando imposta da un server MCP scritto apposta.</li>
+        <li>Governatore del budget che legge l'uso dell'abbonamento e, tramite hook su ogni chiamata, fa salvare un checkpoint e fermare gli agenti prima del limite; il lavoro riprende dal checkpoint.</li>
+        <li>Controllo da Telegram, approvazione umana su spese e pubblicazioni, stato sincronizzato tra due computer via Git.</li>
+      </ul></div>
+    <div class="item"><h3>Steady e StillNote · app Android <span>v1.1.0 · v0.1.0</span></h3>
+      <ul>
+        <li>Tracker di abitudini e to-do offline-first con sincronizzazione bidirezionale su Notion: Kotlin, Jetpack Compose, Room, WorkManager, widget Glance; token cifrato AES-256 nel Keystore.</li>
+      </ul></div>
+    <div class="item"><h3>Automazione e template Notion <span>uso quotidiano</span></h3>
+      <ul>
+        <li>Uno spazio Notion (attività, abitudini, finanze) alimentato da bot, app e agenti; template pubblico di otto database per David.</li>
+      </ul></div>
+  </div></section>
+
+  <section><h2>Competenze</h2><div class="skills">
+    <b>AI e agenti</b><span>API di Claude, Claude Code (CLAUDE.md, plan mode, hook), server MCP, prompt per il riassunto</span>
+    <b>Automazione</b><span>Python (asyncio), integrazioni REST con Notion, Google Calendar e Telegram</span>
+    <b>Affidabilità e rilascio</b><span>Retry e backoff, timeout, log strutturati; Git e GitHub, pull request, CI, deploy su Railway</span>
+    <b>Sistemi</b><span>Linux (Arch, uso quotidiano, systemd), Windows, Active Directory, PowerShell; SQL di base</span>
+    <b>Mobile</b><span>Kotlin, Jetpack Compose, Room</span>
+    <b>Lingue</b><span>Italiano madrelingua, inglese fluente</span>
+  </div></section>
+
+  <section><h2>Esperienza</h2><div>
+    <div class="item"><h3>IT Consultant · Supporto tecnico <span>04/2024 – oggi</span></h3>
+      <p class="sub">IWS Consulting, Roma · in presidio presso un cliente del settore lusso</p>
+      <ul>
+        <li>Incident e richieste degli utenti tramite ticketing, dalla presa in carico alla risoluzione.</li>
+        <li>Utenze in Active Directory (creazione, modifica, disattivazione); diagnosi hardware e software sulle postazioni Windows; script PowerShell per le attività operative.</li>
+      </ul></div>
+    <div class="item"><h3>Tirocinante <span>01/2021 – 06/2021</span></h3>
+      <p class="sub">Eni, Roma</p>
+      <ul><li>Vincitore dell'Innovation Day, categoria Best Market Appealing Solution. Progetto Data 4 Good: analisi di dati pubblici su qualità dell'aria e traffico nei quartieri di Milano.</li></ul></div>
+  </div></section>
+
+  <section><h2>Formazione</h2><div>
+    <div class="item"><h3>Google Cybersecurity Professional Certificate <span>12/2023 – 01/2024</span></h3><p class="sub">Google · percorso di 8 corsi</p></div>
+    <div class="item"><h3>Diploma di istituto tecnico tecnologico, Informatica · 100/100 <span>2019</span></h3><p class="sub">ITTS Alessandro Volta, Guidonia (RM)</p></div>
+  </div></section>
+
+  <p class="gdpr">Autorizzo il trattamento dei dati personali contenuti nel curriculum vitae ai sensi del Regolamento UE 2016/679 (GDPR) e del D.Lgs. 196/2003.</p>
+</div>
+
+<!-- ============ ENGLISH ============ -->
+<div class="page" data-l="en">
+  <header>
+    <div>
+      <h1>Cristian <em>Principi</em></h1>
+      <p class="role">Automation and AI integration · Python</p>
+    </div>
+    <p class="contact">Guidonia Montecelio (Rome), Italy<br>+39 392 559 5349<br>cristianprincipi01@gmail.com<br>github.com/CristianPrincipi</p>
+  </header>
+
+  <section><h2>Profile</h2>
+    <p class="profile">I build systems that combine AI, bots, automation and databases: a message becomes tidy data in the tools people already use. Self-taught developer working AI-first with Claude Code, written plans, tests and review before every release. Reliability is my main care: retries, timeouts, logs and failures made visible. By day I work in IT support at an enterprise client.</p>
+  </section>
+
+  <section><h2>Projects</h2><div>
+    <div class="item"><h3>David · AI assistant on Telegram <span>running</span></h3>
+      <ul>
+        <li>Python service (asyncio) automating expenses and budget, Google Calendar reminders, train departure monitoring and a knowledge base in Notion; Claude API to summarise videos, articles and PDFs.</li>
+        <li>AI only where it adds value, deterministic code everywhere else, to keep cost and failure modes under control.</li>
+        <li>Reliability: retries with backoff on 429 and 5xx, blocking calls moved off the event loop with timeouts, structured logs, failures reported to Telegram, owner-only access.</li>
+        <li>Worker on Railway with CI-gated automatic deploy; a branch per session and review before merge.</li>
+      </ul></div>
+    <div class="item"><h3>The Office · multi-agent system <span>running · private</span></h3>
+      <ul>
+        <li>An agency of AI agents on headless Claude Code: employees with their own role, goal, limits and workspace, organised in departments with a chain of command enforced by a purpose-built MCP server.</li>
+        <li>A budget governor reads subscription usage and, through a hook on every tool call, makes agents checkpoint and stop before the limit; work resumes from the checkpoint.</li>
+        <li>Controlled from Telegram, human approval on spending and publishing, state synced between two computers through Git.</li>
+      </ul></div>
+    <div class="item"><h3>Steady and StillNote · Android apps <span>v1.1.0 · v0.1.0</span></h3>
+      <ul>
+        <li>Offline-first habit tracker and to-do app with two-way Notion sync: Kotlin, Jetpack Compose, Room, WorkManager, Glance widgets; token encrypted with AES-256 in the Keystore.</li>
+      </ul></div>
+    <div class="item"><h3>Notion automation and templates <span>daily use</span></h3>
+      <ul>
+        <li>A Notion workspace (tasks, habits, finances) fed by bots, apps and agents; a public eight-database template for David.</li>
+      </ul></div>
+  </div></section>
+
+  <section><h2>Skills</h2><div class="skills">
+    <b>AI and agents</b><span>Claude API, Claude Code (CLAUDE.md, plan mode, hooks), MCP servers, prompt design for summarisation</span>
+    <b>Automation</b><span>Python (asyncio), REST integrations with Notion, Google Calendar and Telegram</span>
+    <b>Reliability, delivery</b><span>Retries and backoff, timeouts, structured logging; Git and GitHub, pull requests, CI, deploy to Railway</span>
+    <b>Systems</b><span>Linux (Arch, daily driver, systemd), Windows, Active Directory, PowerShell; SQL basics</span>
+    <b>Mobile</b><span>Kotlin, Jetpack Compose, Room</span>
+    <b>Languages</b><span>Italian (native), English (fluent)</span>
+  </div></section>
+
+  <section><h2>Experience</h2><div>
+    <div class="item"><h3>IT Consultant · Technical Support <span>04/2024 – present</span></h3>
+      <p class="sub">IWS Consulting, Rome · on site at a client in the luxury sector</p>
+      <ul>
+        <li>User incidents and requests through ticketing, from intake to resolution.</li>
+        <li>Active Directory accounts (creation, changes, deprovisioning); hardware and software diagnosis on Windows workstations; PowerShell scripts for day-to-day operations.</li>
+      </ul></div>
+    <div class="item"><h3>Intern <span>01/2021 – 06/2021</span></h3>
+      <p class="sub">Eni, Rome</p>
+      <ul><li>Winner of the Innovation Day, Best Market Appealing Solution category. Data 4 Good project: analysis of public air-quality and traffic data across Milan neighbourhoods.</li></ul></div>
+  </div></section>
+
+  <section><h2>Education</h2><div>
+    <div class="item"><h3>Google Cybersecurity Professional Certificate <span>12/2023 – 01/2024</span></h3><p class="sub">Google · 8-course programme</p></div>
+    <div class="item"><h3>Technical high school diploma, Computer Science · 100/100 <span>2019</span></h3><p class="sub">ITTS Alessandro Volta, Guidonia (Rome)</p></div>
+  </div></section>
+
+  <p class="gdpr">I authorise the processing of the personal data contained in this CV pursuant to Regulation (EU) 2016/679 (GDPR) and Italian Legislative Decree 196/2003.</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cristian Principi · Automazione e AI</title>
+<meta name="description" content="Costruisco sistemi di automazione con l'intelligenza artificiale: bot, agenti e integrazioni che trasformano un messaggio in dati ordinati.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Cristian Principi · Automazione e AI">
+<meta property="og:description" content="Bot, agenti AI e integrazioni che trasformano un messaggio in dati ordinati negli strumenti che usi già.">
+<meta name="theme-color" content="#14231b">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2314231b'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='17' font-style='italic' fill='%23e8efe6' text-anchor='middle'%3Ecp%3C/text%3E%3C/svg%3E">
+<link rel="preload" href="assets/fonts/Newsreader.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/style.css?v=11">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<!-- Sipario d'apertura -->
+<div class="intro" id="intro" aria-hidden="true">
+  <div class="intro__half intro__half--l"><span>Cristian</span></div>
+  <div class="intro__line"></div>
+  <div class="intro__half intro__half--r"><span><em>Principi</em></span></div>
+</div>
+
+<header class="nav on-dark" id="nav">
+  <a class="nav__brand" href="#top"><i class="dot"></i>Cristian Principi <span data-i18n="nav.role">automazione &amp; AI</span></a>
+  <nav class="nav__links" aria-label="Sezioni">
+    <a href="#sistemi"><span data-i18n="nav.systems">Sistemi</span> <sup>05</sup></a>
+    <a href="#storia" data-i18n="nav.story">Storia</a>
+    <a href="#servizi" data-i18n="nav.services">Servizi</a>
+    <a href="#contatti" data-i18n="nav.contact">Contatti</a>
+  </nav>
+  <div class="lang" role="group" aria-label="Lingua">
+    <button type="button" data-lang="it" aria-pressed="true">IT</button><span>/</span><button type="button" data-lang="en" aria-pressed="false">EN</button>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero__copy">
+    <p class="label" data-i18n="hero.label">Dal messaggio al dato</p>
+    <h1 class="hero__title" data-i18n="hero.title">Costruisco sistemi di automazione con l'intelligenza artificiale. Bot, agenti e integrazioni che trasformano un messaggio in dati ordinati.</h1>
+    <a class="link" href="#sistemi" data-i18n="hero.cta">Guarda i sistemi</a>
+  </div>
+
+  <div class="demo" id="demo" aria-hidden="true">
+    <div class="demo__chat">
+      <div class="demo__bar"><i class="dot"></i>David <span>Telegram</span></div>
+      <div class="demo__msgs" id="demoMsgs"></div>
+      <div class="demo__input"><span id="demoType"></span><i class="caret"></i></div>
+    </div>
+    <div class="demo__arrow"><span></span></div>
+    <div class="demo__sheet">
+      <div class="demo__bar"><i class="sq"></i><span id="demoDb">Expenses</span> <span>Notion</span></div>
+      <div class="demo__rows" id="demoRows"></div>
+    </div>
+  </div>
+
+  <p class="hero__tags"><span data-i18n="hero.note">Ricostruzione illustrativa dei comandi di David</span></p>
+</section>
+
+<!-- MISSIONE -->
+<section class="mission wrap" id="missione">
+  <div class="mission__side reveal">
+    <p class="label" data-i18n="mission.label">La missione</p>
+    <p class="mission__big" data-i18n="mission.big">Le persone decidono. Il resto lo fa il&nbsp;sistema.</p>
+    <figure class="film">
+      <video controls playsinline preload="none" poster="assets/img/mission-film.webp" width="1280" height="720" aria-label="What could run by itself? Animated film, 29 seconds, in English">
+        <source src="assets/video/mission-film.mp4" type="video/mp4">
+      </video>
+      <figcaption data-i18n="mission.film">Tre sistemi in 29 secondi. In inglese, con audio.</figcaption>
+    </figure>
+  </div>
+  <div class="mission__text">
+    <p class="reveal" data-i18n="mission.p1">Ricopiare dati, rincorrere scadenze, riassumere documenti, passare il lavoro da una persona all'altra: sono compiti che un sistema ben costruito svolge da solo, ogni giorno, senza dimenticare nulla. Io lo costruisco intorno agli strumenti che usi già, e lascio a te le decisioni che contano.</p>
+    <ul class="principles">
+      <li class="reveal"><b data-i18n="mission.a.t">L'AI dove serve</b><span data-i18n="mission.a.d">Codice deterministico ovunque altro, per tenere sotto controllo costi ed errori.</span></li>
+      <li class="reveal"><b data-i18n="mission.b.t">Affidabile prima che brillante</b><span data-i18n="mission.b.d">Retry, timeout, log. Un guasto diventa un avviso, mai un silenzio.</span></li>
+      <li class="reveal"><b data-i18n="mission.c.t">Negli strumenti che hai già</b><span data-i18n="mission.c.d">Notion, calendario, fogli, chat. Nessun nuovo gestionale da imparare.</span></li>
+      <li class="reveal"><b data-i18n="mission.d.t">I dati restano tuoi</b><span data-i18n="mission.d.d">Sui tuoi account, senza telemetria, con i segreti cifrati.</span></li>
+    </ul>
+  </div>
+</section>
+
+<div class="wordmark" aria-hidden="true"><div class="wordmark__in" id="wordmark">Cristian Principi</div></div>
+
+<!-- SISTEMI -->
+<section class="systems wrap" id="sistemi">
+  <header class="sec-head reveal">
+    <p class="label" data-i18n="sys.label">Sistemi selezionati</p>
+    <p class="label label--r" data-i18n="sys.sub">AI, bot, automazione, database</p>
+  </header>
+
+  <!-- 01 David -->
+  <article class="sys">
+    <div class="sys__visual sys__visual--wide clip">
+      <div class="panel panel--dark term">
+        <p class="term__h">david · telegram</p>
+        <p><b>Add e</b> Coffee 2,50 <i data-i18n="d.c1">spesa nel mese corrente</i></p>
+        <p><b>B</b> <i data-i18n="d.c2">budget: speso, totale, residuo</i></p>
+        <p><b>Remind</b> Dentist tr - 10 <i data-i18n="d.c3">evento su Google Calendar</i></p>
+        <p><b>Learn video</b> youtu.be/… <i data-i18n="d.c4">riassunto strutturato in Notion</i></p>
+        <p><b>Implement</b> … - Brain <i data-i18n="d.c5">unisce la fonte al manuale dell'area</i></p>
+        <p><b>Get</b> ? - Finance <i data-i18n="d.c6">rilegge il manuale in chat</i></p>
+        <p><b>undo</b> <i data-i18n="d.c7">annulla l'ultima modifica</i></p>
+      </div>
+    </div>
+    <div class="sys__body reveal">
+      <p class="label"><span class="num">01</span> <span data-i18n="d.kind">Assistente AI su Telegram</span></p>
+      <h2>David</h2>
+      <p data-i18n="d.desc">Un assistente personale che tiene in Notion spese, libri, appunti e promemoria, e trasforma video, articoli e PDF in riassunti e poi in manuali vivi da interrogare dalla chat. Scrive anche per primo: briefing del mattino, allarmi di budget, riepilogo settimanale.</p>
+      <ul class="facts">
+        <li data-i18n="d.f1">Python asincrono su API Claude, Notion, Google Calendar e Telegram</li>
+        <li data-i18n="d.f2">Retry con backoff, timeout, log strutturati, errori notificati in chat</li>
+        <li data-i18n="d.f3">Test offline, CI e deploy automatico su Railway</li>
+      </ul>
+      <a class="link" href="https://github.com/CristianPrincipi/Notion-Telegram-Bot" target="_blank" rel="noopener" data-i18n="sys.code">Codice su GitHub</a>
+    </div>
+  </article>
+
+  <!-- 02 The Office -->
+  <article class="sys sys--flip">
+    <div class="sys__visual clip">
+      <div class="panel office" id="officeDemo">
+        <div class="od">
+          <div class="od__chat">
+            <p class="term__h">michael · telegram</p>
+            <div class="od__msgs" id="odMsgs" aria-hidden="true"></div>
+          </div>
+          <div class="od__side">
+            <p class="term__h" data-i18n="o.org">organigramma</p>
+            <ul class="tree">
+              <li data-who="michael"><b>Michael</b> <span data-i18n="o.r1">Boss</span>
+                <ul>
+                  <li data-who="david"><b>David</b> <span data-i18n="o.r2">Assunzioni</span></li>
+                  <li data-who="pam"><b>Pam</b> <span data-i18n="o.r3">Marketing</span>
+                    <ul>
+                      <li data-who="dwight"><b>Dwight</b> <span data-i18n="o.r4">Ricerca</span></li>
+                      <li data-who="kelly"><b>Kelly</b> <span data-i18n="o.r5">Contenuti</span></li>
+                      <li data-who="ryan"><b>Ryan</b> <span data-i18n="o.r6">Demo</span></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <p class="term__h"><span data-i18n="o.budget">budget · finestra di 5 ore</span> <b id="odState">closed</b></p>
+            <div class="gauge"><i class="gauge__fill" id="odFill"></i>
+              <span style="--w:52%">Open</span><span style="--w:16%">Yellow</span><span style="--w:16%">Closing</span><span style="--w:16%">Closed</span>
+            </div>
+          </div>
+        </div>
+        <p class="od__note" data-i18n="o.note">Ricostruzione di una sessione reale: i messaggi di sistema sono quelli veri</p>
+      </div>
+    </div>
+    <div class="sys__body reveal">
+      <p class="label"><span class="num">02</span> <span data-i18n="o.kind">Sistema multi-agente</span></p>
+      <h2>The Office</h2>
+      <p data-i18n="o.desc">Un'agenzia di agenti AI. Ogni dipendente ha nome, ruolo, obiettivo, limiti e un proprio "laptop"; lavorano in reparti con una catena di comando, dentro il budget di un abbonamento. Prima del limite salvano un checkpoint e riprendono da lì. Io la apro, la chiudo e parlo con chiunque da Telegram.</p>
+      <ul class="facts">
+        <li data-i18n="o.f1">Claude Code headless con un server MCP scritto apposta</li>
+        <li data-i18n="o.f2">Un governatore del budget controlla ogni chiamata agli strumenti</li>
+        <li data-i18n="o.f3">Spese, assunzioni e pubblicazioni passano dalla mia approvazione</li>
+        <li data-i18n="o.f4">Ogni risultato dichiara cosa è stato verificato e cosa no</li>
+      </ul>
+      <p class="muted small" data-i18n="o.priv">Repository privato: demo su richiesta.</p>
+    </div>
+  </article>
+
+  <!-- 03 App Android -->
+  <article class="sys">
+    <div class="sys__visual sys__visual--phones">
+      <figure class="phone clip" data-phone>
+        <div class="phone__in">
+          <div class="phone__screens" style="aspect-ratio:720/1584"><img data-s="week" class="on" src="assets/img/steady-week.webp" alt="Steady: settimana" loading="lazy"><img data-s="month" src="assets/img/steady-month.webp" alt="Steady: mese" loading="lazy"><img data-s="year" src="assets/img/steady-year.webp" alt="Steady: anno" loading="lazy"><img data-s="stats" src="assets/img/steady-stats.webp" alt="Steady: statistiche" loading="lazy"><img data-s="settings" src="assets/img/steady-settings.webp" alt="Steady: impostazioni" loading="lazy"><img data-s="habits" data-nonav src="assets/img/steady-habits.webp" alt="Steady: ordine e colore delle abitudini" loading="lazy"><video data-s="widgets" data-nonav src="assets/video/steady-widgets.mp4" poster="assets/img/steady-widgets.webp" muted loop playsinline preload="none" aria-label="Steady: i widget sulla schermata iniziale"></video><button type="button" class="hot" data-go="month" style="left:0%;top:88%;width:20%;height:12%" aria-label="month"></button><button type="button" class="hot" data-go="week" style="left:20%;top:88%;width:20%;height:12%" aria-label="week"></button><button type="button" class="hot" data-go="year" style="left:40%;top:88%;width:20%;height:12%" aria-label="year"></button><button type="button" class="hot" data-go="stats" style="left:60%;top:88%;width:20%;height:12%" aria-label="stats"></button><button type="button" class="hot" data-go="settings" style="left:80%;top:88%;width:20%;height:12%" aria-label="settings"></button></div>
+          <figcaption><b>Steady</b><span class="phone__tabs"><button type="button" data-go="week" aria-pressed="true" data-i18n="g.1">Settimana</button><button type="button" data-go="month" aria-pressed="false" data-i18n="g.2">Mese</button><button type="button" data-go="year" aria-pressed="false" data-i18n="g.3">Anno</button><button type="button" data-go="stats" aria-pressed="false" data-i18n="g.10">Statistiche</button><button type="button" data-go="settings" aria-pressed="false" data-i18n="g.11">Impostazioni</button><button type="button" data-go="habits" aria-pressed="false" data-i18n="g.4">Abitudini</button><button type="button" data-go="widgets" aria-pressed="false">Widget</button></span></figcaption>
+        </div>
+      </figure>
+      <figure class="phone phone--low clip" data-phone>
+        <div class="phone__in">
+          <div class="phone__screens" style="aspect-ratio:780/1688"><img data-s="today" class="on" src="assets/img/stillnote-today.webp" alt="StillNote: oggi" loading="lazy"><img data-s="calendar" src="assets/img/stillnote-calendar.webp" alt="StillNote: calendario" loading="lazy"><img data-s="projects" src="assets/img/stillnote-projects.webp" alt="StillNote: progetti" loading="lazy"><img data-s="new-task" data-nonav src="assets/img/stillnote-new-task.webp" alt="StillNote: nuova attività" loading="lazy"><img data-s="night" data-nonav src="assets/img/stillnote-night.webp" alt="StillNote: tema notte" loading="lazy"><img data-s="widgets" data-nonav src="assets/img/stillnote-widgets.webp" alt="StillNote: i widget sulla schermata iniziale" loading="lazy"><button type="button" class="hot" data-go="calendar" style="left:0%;top:90%;width:33.3%;height:10%" aria-label="calendar"></button><button type="button" class="hot" data-go="today" style="left:33.3%;top:90%;width:33.4%;height:10%" aria-label="today"></button><button type="button" class="hot" data-go="projects" style="left:66.7%;top:90%;width:33.3%;height:10%" aria-label="projects"></button><button type="button" class="hot" data-go="new-task" style="left:74%;top:79%;width:22%;height:10%" aria-label="new-task"></button></div>
+          <figcaption><b>StillNote</b><span class="phone__tabs"><button type="button" data-go="today" aria-pressed="true" data-i18n="g.5">Oggi</button><button type="button" data-go="calendar" aria-pressed="false" data-i18n="g.7">Calendario</button><button type="button" data-go="projects" aria-pressed="false" data-i18n="g.8">Progetti</button><button type="button" data-go="new-task" aria-pressed="false" data-i18n="g.6">Nuova</button><button type="button" data-go="night" aria-pressed="false" data-i18n="g.9">Notte</button><button type="button" data-go="widgets" aria-pressed="false">Widget</button></span></figcaption>
+        </div>
+      </figure>
+      <p class="phone__hint label" data-i18n="a.hint">Tocca la barra in basso nelle schermate per navigare</p>
+    </div>
+    <div class="sys__body reveal">
+      <p class="label"><span class="num">03</span> <span data-i18n="a.kind">App Android</span></p>
+      <h2>Steady <em>&amp;</em> StillNote</h2>
+      <p data-i18n="a.desc">Un tracker di abitudini e una to-do su post-it. Funzionano senza rete e si sincronizzano nei due sensi con il tuo database Notion: l'app è l'interfaccia comoda, Notion resta la fonte dei dati.</p>
+      <ul class="facts">
+        <li data-i18n="a.f1">Kotlin, Jetpack Compose, Room, WorkManager, widget in Glance</li>
+        <li data-i18n="a.f2">Offline-first: ogni modifica è salvata subito e inviata dopo</li>
+        <li data-i18n="a.f3">Token cifrato AES-256 nel Keystore, nessuna telemetria</li>
+      </ul>
+      <p class="links"><a class="link" href="https://github.com/CristianPrincipi/Steady-Habit-Tracker" target="_blank" rel="noopener">Steady</a><a class="link" href="https://github.com/CristianPrincipi/StillNote" target="_blank" rel="noopener">StillNote</a></p>
+    </div>
+  </article>
+
+  <!-- 04 Automazione Notion -->
+  <article class="sys sys--flip">
+    <div class="sys__visual clip">
+      <figure class="shot"><img src="assets/img/notion-life-os.webp" alt="La pagina iniziale del mio Notion: attività, abitudini del giorno e le aree" loading="lazy" width="1410" height="1425"></figure>
+    </div>
+    <div class="sys__body reveal">
+      <p class="label"><span class="num">04</span> <span data-i18n="n.kind">Automazione Notion</span></p>
+      <h2 data-i18n="n.title">Un solo posto per i dati</h2>
+      <p data-i18n="n.desc">Il mio spazio Notion tiene attività, abitudini, aree e finanze. Non lo compilo a mano: ci scrivono il bot, le app e gli agenti, ognuno nelle sue colonne, senza sovrascriversi.</p>
+      <ul class="facts">
+        <li data-i18n="n.f1">Colonne mappate per ID: rinominarle non rompe la sincronizzazione</li>
+        <li data-i18n="n.f2">Conflitti risolti con regole dichiarate, mai un valore vuoto sopra un dato vero</li>
+        <li data-i18n="n.f3">Limiti dell'API rispettati: richieste regolate e ritentate</li>
+      </ul>
+    </div>
+  </article>
+
+  <!-- 05 Template -->
+  <article class="sys">
+    <div class="sys__visual sys__visual--wide clip">
+      <div class="panel dbs">
+        <p class="term__h" data-i18n="t.head">david · template notion · 8 database</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6"/></svg><b>Expenses</b><span data-i18n="t.r1">Ogni spesa, collegata al suo mese</span><code>Add e · B</code></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="1.5"/><path d="M4 10h16M8 3v4M16 3v4"/></svg><b>Months</b><span data-i18n="t.r2">Una pagina per mese, creata da David</span><code>Month</code></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h10a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z"/><path d="M5 17a3 3 0 0 1 3-3h10"/></svg><b>Books</b><span data-i18n="t.r3">Libri letti e citazioni</span><code>Add b · Add q</code></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8.5 6.2-3.2 10.3H6.7L3.5 9.2z"/></svg><b>Areas</b><span data-i18n="t.r4">Le aree a cui tutto si collega</span><code></code></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 9L12 4.5 21.5 9 12 13.5z"/><path d="M6.5 11.2V16c1.6 1.6 3.4 2.4 5.5 2.4s3.9-.8 5.5-2.4v-4.8"/></svg><b>Learn</b><span data-i18n="t.r5">Riassunti di video, articoli e PDF</span><code>Learn</code></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="5" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/><circle cx="12" cy="13" r="2"/><path d="M12 7v4M10.4 14.3L6.4 16.600M13.6 14.3l4 2.3"/></svg><b>Brain</b><span data-i18n="t.r6">Manuale vivo: come lavorare meglio</span><code>Implement · Get</code></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9.5L12 4l9 5.5z"/><path d="M6 10v7M10 10v7M14 10v7M18 10v7M3.5 20h17"/></svg><b>Finance</b><span data-i18n="t.r7">Manuale vivo: gestione del denaro</span><code>Implement · Get</code></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 4.5C10 4 5 8.5 5 14.5c0 1.500.4 2.8 1 4 6.500.5 13.5-3 13.5-14z"/><path d="M4 20.5C7 15 10.5 12 15 9.5"/></svg><b>Diet</b><span data-i18n="t.r8">Pagina strutturata con le prove dietro ogni riga</span><code>Implement · Get</code></li>
+        </ul>
+      </div>
+    </div>
+    <div class="sys__body reveal">
+      <p class="label"><span class="num">05</span> <span data-i18n="t.kind">Template Notion</span></p>
+      <h2 data-i18n="t.title">Spazi pronti da duplicare</h2>
+      <p data-i18n="t.desc">Database progettati perché un'automazione possa leggerli e scriverli: relazioni, colonne e pagine già al loro posto. Il template di David ne contiene otto e si duplica in un clic.</p>
+      <a class="link" href="https://protective-cost-810.notion.site/David-Notion-Template-3e853cc47bc281a28e30c6f0d37acbcf" target="_blank" rel="noopener" data-i18n="t.link">Apri il template</a>
+    </div>
+  </article>
+</section>
+
+<!-- INDICE -->
+<section class="index wrap" id="indice">
+  <header class="sec-head reveal">
+    <p class="label" data-i18n="i.label">Indice</p>
+    <p class="label label--r" data-i18n="i.sub">Tutti i lavori</p>
+  </header>
+  <ol class="rows">
+    <li class="reveal"><span class="num">01</span><b>David</b><span data-i18n="i.1a">Assistente AI</span><i>Python · Claude · Notion</i><span data-i18n="i.live">In esercizio</span></li>
+    <li class="reveal"><span class="num">02</span><b>The Office</b><span data-i18n="i.2a">Multi-agente</span><i>Claude Code · MCP · Telegram</i><span data-i18n="i.live">In esercizio</span></li>
+    <li class="reveal"><span class="num">03</span><b>Steady</b><span data-i18n="i.3a">App Android</span><i>Kotlin · Compose · Room</i><span>v1.1.0</span></li>
+    <li class="reveal"><span class="num">04</span><b>StillNote</b><span data-i18n="i.3a">App Android</span><i>Kotlin · Compose · Room</i><span>v0.1.0</span></li>
+    <li class="reveal"><span class="num">05</span><b>Life OS</b><span data-i18n="i.5a">Automazione Notion</span><i>Notion API</i><span data-i18n="i.daily">Uso quotidiano</span></li>
+    <li class="reveal"><span class="num">06</span><b data-i18n="i.6">Template di David</b><span>Template Notion</span><i data-i18n="i.6b">8 database</i><span data-i18n="i.pub">Pubblico</span></li>
+  </ol>
+</section>
+
+<!-- STORIA -->
+<section class="story wrap" id="storia">
+  <header class="sec-head reveal">
+    <p class="label" data-i18n="s.label">La mia storia</p>
+    <p class="label label--r">Guidonia Montecelio, Roma</p>
+  </header>
+  <div class="story__top">
+    <figure class="portrait clip"><img src="assets/img/cristian.webp" alt="Cristian Principi" loading="lazy" width="900" height="1125"></figure>
+    <p class="story__lead reveal" data-i18n="s.lead">Di giorno risolvo problemi informatici per chi lavora. È lì che ho visto quanto tempo si perde a ricopiare dati a mano. Il resto del tempo lo passo a costruire i sistemi che lo evitano.</p>
+  </div>
+  <ol class="rows rows--story">
+    <li class="reveal"><span class="num">2019</span><b data-i18n="s.1t">Diploma in Informatica, 100/100</b><i data-i18n="s.1d">ITT Alessandro Volta, Guidonia. C++, web, database, reti.</i></li>
+    <li class="reveal"><span class="num">2021</span><b data-i18n="s.2t">Tirocinio in Eni</b><i data-i18n="s.2d">Vincitore dell'Innovation Day, categoria Best Market Appealing Solution. Progetto Data 4 Good: analisi di dati pubblici su aria e traffico a Milano.</i></li>
+    <li class="reveal"><span class="num">2023–24</span><b>Google Cybersecurity</b><i data-i18n="s.3d">Certificato professionale in otto corsi: reti, Linux e SQL, gestione dei rischi, rilevamento e risposta, automazione con Python.</i></li>
+    <li class="reveal"><span class="num" data-i18n="s.4y">2024–oggi</span><b data-i18n="s.4t">IT Consultant, IWS Consulting</b><i data-i18n="s.4d">In presidio presso un cliente del settore lusso: richieste dall'apertura alla soluzione, utenze Active Directory, script PowerShell.</i></li>
+    <li class="reveal"><span class="num" data-i18n="s.5y">In parallelo</span><b data-i18n="s.5t">Autodidatta, AI-first</b><i data-i18n="s.5d">Ho costruito prima gli strumenti che servivano a me, poi un intero team di agenti. Lavoro con piani scritti, test e revisione prima di ogni rilascio, su Arch Linux.</i></li>
+  </ol>
+</section>
+
+<!-- SERVIZI -->
+<section class="services" id="servizi">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <p class="label" data-i18n="v.label">Cosa posso fare per te</p>
+      <p class="label label--r" data-i18n="v.sub">Si parte da un problema, non da una tecnologia</p>
+    </header>
+    <ul class="svc">
+      <li class="reveal"><span class="num">01</span><h3 data-i18n="v.1t">Automazioni con AI</h3><p data-i18n="v.1d">Un messaggio, una foto o un vocale diventano dati ordinati nel tuo strumento, con un riepilogo a fine giornata.</p></li>
+      <li class="reveal"><span class="num">02</span><h3 data-i18n="v.2t">Bot e assistenti</h3><p data-i18n="v.2d">Assistenti su Telegram per te o per il tuo staff, che rispondono solo a chi deve usarli.</p></li>
+      <li class="reveal"><span class="num">03</span><h3 data-i18n="v.3t">Sistemi multi-agente</h3><p data-i18n="v.3d">Più agenti che si dividono il lavoro con ruoli, limiti e la tua approvazione sui passi che contano.</p></li>
+      <li class="reveal"><span class="num">04</span><h3 data-i18n="v.4t">Integrazioni</h3><p data-i18n="v.4d">Notion, Google Calendar, fogli e API che iniziano a parlarsi, senza cambiare gli strumenti che usi.</p></li>
+      <li class="reveal"><span class="num">05</span><h3 data-i18n="v.5t">App Android e siti web</h3><p data-i18n="v.5d">Quando al sistema serve un'interfaccia: un'app che funziona offline o un sito come questo.</p></li>
+      <li class="reveal"><span class="num">06</span><h3>Template Notion</h3><p data-i18n="v.6d">Spazi di lavoro progettati per essere usati dalle persone e scritti dalle automazioni.</p></li>
+    </ul>
+  </div>
+</section>
+
+<!-- CONTATTI -->
+<section class="contact wrap" id="contatti">
+  <div class="contact__lead">
+    <p class="label reveal" data-i18n="c.label">Contatti</p>
+    <h2 class="contact__title reveal" data-i18n="c.title">C'è un lavoro che si ripete ogni settimana? <em>Parliamone.</em></h2>
+    <p class="links reveal">
+      <a class="link link--plain" href="mailto:cristianprincipi01@gmail.com">cristianprincipi01@gmail.com</a>
+      <a class="link link--plain" href="tel:+393925595349">+39 392 559 5349</a>
+    </p>
+    <p class="links reveal">
+      <a class="link" href="https://www.linkedin.com/in/cristian-principi-944686242/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="link" href="https://github.com/CristianPrincipi" target="_blank" rel="noopener">GitHub</a>
+      <a class="link" id="cvLink" href="assets/cv/Cristian-Principi-CV-IT.pdf" target="_blank" rel="noopener" data-i18n="c.cv">Curriculum (PDF)</a>
+    </p>
+  </div>
+  <form class="form reveal" id="form" novalidate>
+    <label><span data-i18n="c.name">Nome</span><input name="name" type="text" autocomplete="name" required></label>
+    <label><span>Email</span><input name="email" type="email" autocomplete="email" required></label>
+    <label><span data-i18n="c.msg">Messaggio</span><textarea name="message" rows="4" required></textarea></label>
+    <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <div class="form__foot">
+      <button type="submit" class="btn" data-i18n="c.send">Invia</button>
+      <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
+    </div>
+  </form>
+</section>
+
+</main>
+
+<footer class="foot wrap">
+  <span>© 2026 Cristian Principi</span>
+  <span data-i18n="f.made">Progettato e scritto a mano, senza framework.</span>
+  <a href="#top" data-i18n="f.top">Torna su ↑</a>
+</footer>
+
+<script src="js/i18n.js?v=11"></script>
+<script src="js/main.js?v=11"></script>
+</body>
+</html>
