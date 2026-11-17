@@ -83,19 +83,58 @@
   onScroll();
 
   /* ---------- Telefoni: schermate sfogliabili ---------- */
-  $$('[data-phone]').forEach(function (ph) {
-    var box = $('.phone__screens', ph);
+  // Le schermate partono prima che il telefono entri in vista: quella visibile con priorità, le altre dietro,
+  // così il sipario d'ingresso e i cambi di schermata non mostrano mai un riquadro vuoto.
+  function warm(box) {
+    if (box.dataset.warm) return; box.dataset.warm = '1';
+    $$('img[data-s]', box).forEach(function (i) { i.loading = 'eager'; });
+    $$('video[data-poster]', box).forEach(function (v) { v.poster = v.dataset.poster; });
+  }
+  function prep(el) {
+    if (el.tagName !== 'IMG') return Promise.resolve();
+    el.loading = 'eager'; el.fetchPriority = 'high';
+    var p = el.decode ? el.decode() : new Promise(function (r) { if (el.complete) r(); else el.onload = el.onerror = r; });
+    // mai bloccare il cambio di schermata più di un attimo
+    return Promise.race([p.catch(function () {}), new Promise(function (r) { setTimeout(r, 1200); })]);
+  }
+  var phones = $$('[data-phone]');
+  if ('IntersectionObserver' in window) {
+    var pio = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { warm($('.phone__screens', e.target)); pio.unobserve(e.target); } });
+    }, { rootMargin: '900px 0px' });
+    phones.forEach(function (ph) { pio.observe(ph); });
+  } else phones.forEach(function (ph) { warm($('.phone__screens', ph)); });
+
+  // Le altre immagini pigre (ritratto, Notion) partono anch'esse con anticipo, non all'ultimo istante
+  var lazies = $$('img[loading="lazy"]').filter(function (i) { return !i.closest('[data-phone]'); });
+  if ('IntersectionObserver' in window) {
+    var lio = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.loading = 'eager'; lio.unobserve(e.target); } });
+    }, { rootMargin: '1200px 0px' });
+    lazies.forEach(function (i) { lio.observe(i); });
+  }
+
+  phones.forEach(function (ph) {
+    var box = $('.phone__screens', ph), want = null;
     function go(k) {
       var el = $('[data-s="' + k + '"]', box); if (!el) return;
+      want = el; warm(box);
+      $$('.phone__tabs button', ph).forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.go === k)); });
+      prep(el).then(function () { if (want === el) show(el); });
+    }
+    function show(el) {
       $$('[data-s]', box).forEach(function (i) { i.classList.toggle('on', i === el); });
       box.classList.toggle('nonav', el.hasAttribute('data-nonav'));
-      $$('.phone__tabs button', ph).forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.go === k)); });
       $$('video', box).forEach(function (v) {
         if (v === el && !reduce) { var pr = v.play(); if (pr && pr.catch) pr.catch(function () {}); }
         else { v.pause(); }
       });
     }
     ph.addEventListener('click', function (e) { var b = e.target.closest('[data-go]'); if (b) go(b.dataset.go); });
+    // al passaggio del mouse (o al tocco) la schermata comincia a decodificarsi prima del clic
+    function hint(e) { var b = e.target.closest && e.target.closest('[data-go]'); if (b) { var el = $('[data-s="' + b.dataset.go + '"]', box); if (el && !el.dataset.hint) { el.dataset.hint = '1'; prep(el); } } }
+    ph.addEventListener('pointerover', hint);
+    ph.addEventListener('focusin', hint);
   });
 
   /* ---------- Demo nell'apertura: messaggio -> riga in Notion ---------- */
